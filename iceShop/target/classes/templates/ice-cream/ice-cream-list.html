@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>IceCream List</title>
+</head>
+<body>
+<div>
+    <form method="get">
+        <h1>IceCream List</h1>
+        <input name="key" type="text">
+        <button type="submit">Search</button>
+    </form>
+</div>
+<table>
+    <tr>
+        <th>SL</th>
+        <th>Name</th>
+        <th>Color</th>
+        <th>Price</th>
+        <th>Stock</th>
+        <th>Action</th>
+    </tr>
+    <tr th:each="iceCream : ${iceCreamList}">
+        <td th:text="${iceCreamStat.index + 1}"></td>
+        <td th:text="${iceCream.name}"></td>
+        <td th:text="${iceCream.color}"></td>
+        <td th:text="${iceCream.price}"></td>
+        <td th:text="${iceCream.stock}"></td>
+        <td>
+            <a th:href="@{/add-ice-cream(id=${iceCream.id})}">Open</a>
+        </td>
+    </tr>
+</table>
+</body>
+</html>

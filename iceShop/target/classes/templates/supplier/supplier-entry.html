@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<form th:object="${supplier}" method="post">
+    <label for="name">Name</label>
+    <input type="text" id="name" th:field="*{name}">
+    <br><br>
+    <label for="phone">Phone</label>
+    <input type="text" id="phone" th:field="*{phone}">
+    <br><br>
+    <label for="email">E-mail</label>
+    <input type="text" id="email" th:field="*{email}">
+    <br><br>
+    <button type="submit">Save</button>
+</form>
+
+</body>
+</html>
